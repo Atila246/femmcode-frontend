@@ -3,6 +3,35 @@
     margin: 0;
 }
 
+/*------------------------------ FONTES DO PROJETO ------------------------------*/
+@font-face {
+    font-family: 'Quicksand-Bold';
+    src: url(../assets/fontes/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Quicksand-Light';
+    src: url(../assets/fontes/Quicksand-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Quicksand-Medium';
+    src: url(../assets/fontes/Quicksand-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Quicksand-Regular';
+    src: url(../assets/fontes/Quicksand-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Quicksand-SemiBold';
+    src: url(../assets/fontes/Quicksand-SemiBold.ttf);
+}
+/*-------------------------------------------------------------------------------*/
+
+
+/*------------------------------ CONTAINER GLOBAL ------------------------------*/
 .container {
     display: flex;
     flex-direction: row;
@@ -14,81 +43,105 @@
     color: black;
 }
 
-.first_column{
-    width: 30%;
-    height: 500px;
-    background-color: white;
-    box-shadow: 0px 1px 10px #b86cff9a;
+/*------------------------------ PRIMEIRA SESSÃO (CONTENT) - CADASTRO ------------------------------*/
+.primeiro_content{
+    display: flex;
+    background-color: #fff;
+    width: 870px;
+    height: 540px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 0px 20px 5px #c1cdff5b;
     border-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
 }
 
-.second_column{
-    width: 20%;
-    height: 500px;
-    background: linear-gradient(to bottom, #F36EC0, #AF5FE4);
-    box-shadow: 1px 1px 5px #333;
-    border-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
+.primeiro_content::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(to top,#f36ec0, #af5fe4);
+    width: 340px;
+    height: 100%;
+    left: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+.primeiro_content /*.segunda_coluna*/ { 
+    z-index: 11;
+}
+
+.primeira_coluna {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    color: white;  
+    flex-direction: column;
     text-align: center;
+    width: 340px;
+    z-index: 10;
 }
 
-.cadastro{
-    width: 80%;
-    margin: 50px;
+.logo_login{
+    width: 150px;
 }
 
-.cadastro h2{
-    margin: 60px;
+.logo_login img{
+    width: 100%;
+    object-fit: contain;
 }
 
-.conteudo{
+.primeiro_titulo{
+    width: 100%;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: 'Quicksand-Bold';
+    margin: 18px 0px;
+}
+
+.primeiro_meio{
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Quicksand-Regular';
+    width: 70%;
+    margin: 0px 50px;
+}
+
+.botao_texto{
+    width: 100%;
+}
+
+.primeira_descricao{
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Quicksand-Regular';
+    margin: 60px 0px 16px;
+}
+
+.botao_entrar{
+    padding: 10px 30px;
+    background-color: transparent;
+    border: solid 3px white;
+    border-radius: 30px;
+    font-family: 'Quicksand-Bold';
+    cursor: pointer;
+}
+
+.botao_entrar:hover{
+    background-color: white;
+    color: #f36ec0;
+    transition: backgorund-color 5s;
+}
+
+/* Forms do primeiro content */
+.segunda_coluna{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 20%;
 }
 
-.entrar{
-    padding: 10px;
-    background-color: #F36EC0;
-    border-radius: 30px;
-    width: 90px;
-    font-weight: 600;
-    font-size: 16px;
-    border: none;
-}
-
-.cadastrar{
-    padding: 10px;
-    background-color: #f36ec000;
-    border-radius: 30px;
-    width: 100px;
-    font-weight: 600;
-    font-size: 16px;
-    border: white 2px solid;
-}
-
-.input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.input:focus {
-    border-color: #AF5FE4;
-    box-shadow: 0 0 5px #b86cff9a;
+.segunda_coluna form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
