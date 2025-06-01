@@ -3,6 +3,8 @@ import LogoSG from '../assets/img/LogoSG.png'
 import React, { useState } from 'react';
 
 function Login() {
+
+    //-------------- FUCIONAMENTO DO FORMS --------------
     const [form, setForm] = useState({
         nomeCompleto: '',
         nomeUsuario: '',
@@ -87,7 +89,7 @@ function Login() {
                                 />
                             </label>
 
-                            <button type="button" onClick={handleSubmit}>
+                            <button className={Styles.cadastrese} type="button" onClick={handleSubmit}>
                                 Cadastrar-se
                             </button>
                         </form>
