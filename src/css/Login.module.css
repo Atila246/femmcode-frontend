@@ -1,6 +1,7 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /*------------------------------ FONTES DO PROJETO ------------------------------*/
@@ -29,10 +30,8 @@
     font-family: 'Quicksand-SemiBold';
     src: url(../assets/fontes/Quicksand-SemiBold.ttf);
 }
-/*-------------------------------------------------------------------------------*/
 
-
-/*------------------------------ CONTAINER GLOBAL ------------------------------*/
+/*------------------------------ CLASSES GLOBAIS ------------------------------*/
 .container {
     display: flex;
     flex-direction: row;
@@ -44,155 +43,450 @@
     color: black;
 }
 
-/*------------------------------ PRIMEIRA SESSÃO (CONTENT) - CADASTRO ------------------------------*/
-.primeiro_content{
+.content {
+    position: relative;
     display: flex;
-    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: white;
     width: 870px;
     height: 540px;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
     box-shadow: 0px 0px 20px 5px #c1cdff5b;
-    border-radius: 10px;
 }
 
-.primeiro_content::before{
+.content::before {
     content: "";
     position: absolute;
-    background: linear-gradient(to top,#f36ec0, #af5fe4);
-    width: 340px;
+    width: 40%;
     height: 100%;
+    background: linear-gradient(to top, #f36ec0, #af5fe4);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
     left: 0;
-    border-radius: 10px 0 0 10px;
 }
 
-.primeiro_content /*.segunda_coluna*/ { 
-    z-index: 11;
+.titulo {
+    font-family: 'Quicksand-Bold';
+    font-size: 1.5rem;
 }
 
-.primeira_coluna {
+.botao {
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px 30px;
+    cursor: pointer;
+    align-self: center;
+    border: none;
+    font-family: 'Quicksand-Bold';
+    font-size: 1rem;
+}
+
+/*------------------------------ PRIMEIRA SESSÃO (CONTENT) - CADASTRO ------------------------------*/
+.primeiro_content {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    width: 340px;
-    z-index: 10;
 }
 
-.logo_login{
+/* Coluna coloridinha */
+.primeira_coluna {
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo_login {
     width: 150px;
 }
 
-.logo_login img{
+.logo_login img {
     width: 100%;
     object-fit: contain;
 }
 
-.primeiro_titulo{
-    width: 100%;
-    color: #fff;
-    font-size: 1.4rem;
-    font-weight: 600;
-    font-family: 'Quicksand-Bold';
-    margin: 18px 0px;
-}
-
-.primeiro_meio{
+.primeiro_titulo {
     color: white;
-    font-size: 14px;
-    font-weight: 300;
-    font-family: 'Quicksand-Regular';
-    width: 70%;
-    margin: 0px 50px;
+    margin: 18px 0;
+    width: 100%;
 }
 
 .botao_texto{
     width: 100%;
 }
 
-.primeira_descricao{
-    color: white;
-    font-size: 14px;
-    font-weight: 300;
+.descricao {
     font-family: 'Quicksand-Regular';
-    margin: 60px 0px 16px;
-}
-
-.botao_entrar{
-    padding: 10px 30px;
-    background-color: transparent;
-    border: solid 3px white;
-    border-radius: 30px;
-    font-family: 'Quicksand-Bold';
-    cursor: pointer;
     font-size: 1rem;
+    color: white;
+    margin: 60px 0 16px;
 }
 
-.botao_entrar:hover{
+.meio {
+    width: 70%;
+    margin: 0 50px;
+}
+
+/* Botão que leva ao Login */
+.primeiro_botao {
+    background-color: transparent;
+    border: 3px solid white;
+    transition: background-color .5s;
+    box-sizing: border-box;
+}
+
+.primeiro_botao:hover {
     background-color: white;
     color: #f36ec0;
+    border: 3px solid white;
 }
 
-/* Forms do primeiro content */
-.segunda_coluna{
+/* Coluna do forms */
+.primeiro_content .segunda_coluna{
+    z-index: 11;
+}
+
+.segundo_titulo {
+    color: #f36ec0;
+    margin-bottom: 20px;
+}
+
+.social_media {
+    width: 35%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 5px;
+}
+
+.social_media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #c7c7c7;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.social_media a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c7c7c7;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: color .5s;
+
+}
+
+.social_media a i:hover {
+    color: #ffffff;
+    border: solid 1px #c7c7c7;
+}
+
+.social_media a:hover {
+    background-color: #c7c7c7;
+    border: none;
+}
+
+.segunda_coluna {
     width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    gap: 20px;
+    margin-top: 40px;
 }
 
-.segunda_coluna h2{
-    color: #f36ec0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    font-family: 'Quicksand-Bold';
-}
-
-.segunda_coluna form{
-    width: 65%;
+.form {
+    width: 55%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    gap: 20px;
+    margin: 0 0 20px;
 }
 
-form label{
+.segunda_coluna form input {
     width: 80%;
+    height: 45px;
+    border: none;
+    background-color: #ecf0f1;
+    outline: none;
 }
 
-label input{
+.segunda_coluna form label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 45px;
     width: 100%;
-    padding: 15px;
-    background-color: #ecf0f1;
     border: none;
+    background-color: #ecf0f1;
+    outline: none;
     border-radius: 15px;
+    color: #81868b;
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.segunda_coluna form label i {
+    margin: 10px;
+}
+
+.form input::placeholder {
     font-family: 'Quicksand-Regular';
 }
 
-.cadastrese{
-    padding: 10px 30px;
-    background-color: #f36ec0;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-family: 'Quicksand-Bold';
-    cursor: pointer;
-    color: white;
-    border: none;
+/* Termos de uso */
+.terms_container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+    height: auto;
+    margin: 0;
 }
 
-.cadastrese:hover{
+.input_terms[type="checkbox"] {
+    width: 16px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.label_terms {
+    font-size: 14px;
+    line-height: 10px;
+    background-color: transparent!important;
+    margin: 0!important;
+}
+
+.input_terms[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Botão de cadastro forms*/
+.segundo_botao {
+    background-color: #f36ec0;
+    color: white;
+    transition: background-color .5s;
+    border: 3px solid #f36ec0;
+    box-sizing: border-box;
+}
+
+.segundo_botao:hover {
     background-color: transparent;
-    border: solid 3px #f36ec0;
+    border: 3px solid #f36ec0;
     color: #f36ec0;
     box-sizing: border-box;
 }
 
 
-.moveToLogin {
-    transform: translateX(-50%);
-    transition: transform 0.6s ease-in-out;
+/*------------------------------ SEGUNDA SESSÃO (CONTENT) - LOGIN ------------------------------*/
+
+.segundo_content {
+    position: absolute;
+}
+
+.segundo_content .primeira_coluna{
+    order: 2;
+    z-index: -1;
+}
+
+.segundo_content .segunda_coluna{
+    order: 1;
+    z-index: -1;
+}
+
+.form a{
+    text-align: center;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+.password{
+    margin: 10px 0;
+}
+
+/* ---------------------- CLASSES DE DEFINIÇÃO DE ESTADO ---------------------- */
+
+/* QUANDO QUISER LOGAR */
+.loga .primeiro_content .primeira_coluna,
+.loga .primeiro_content .segunda_coluna{
+    z-index: -1;
+}
+
+.loga .segundo_content .segunda_coluna{
+    z-index: 11;
+}
+
+.loga .segundo_content .primeira_coluna{
+    z-index: 13;
+}
+
+.loga .content::before{
+    left: 60%;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    animation: slidein  300ms;
+    z-index: 12;
+}
+
+/* QUANDO QUISER CADASTRAR */
+.cadastra .segundo_content .primeira_coluna,
+.cadastra .segundo_content .segunda_coluna{
+    z-index: -1;
+}
+
+
+.cadastra .primeiro_content .segunda_coluna{
+    z-index: 11;
+}
+
+.cadastra .primeiro_content .primeira_coluna{
+    z-index: 13;
+}
+
+.cadastra .content::before{
+    left: 0;
+    animation: slideout 300ms;
+    z-index: 12;
+}
+
+/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE */
+.loga .primeiro_content .segunda_coluna {
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq  350ms;
+}
+
+.cadastra .segundo_content .segunda_coluna {
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir  350ms;
+}
+ 
+.segundo_content {
+    position: absolute;
+    display: flex;
+    width: 870px;
+    height: 540px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ---------------- ANIMAÇÃO ------------------- */
+
+@keyframes deslocamentoEsq {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25% {
+        left: -80px;
+        opacity: .5;
+        /* z-index: 12; NÃO HÁ NECESSIDADE */
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+        /* z-index: 12; NÃO HÁ NECESSIDADE */
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDir {
+
+    from {
+        left: 0;
+        z-index: 12;
+    }
+
+    25% {
+        left: 80px;
+    }
+
+    50% {
+        left: 100px;
+    }
+
+    to {
+        left: 110px;
+        z-index: -1;
+    }
+}
+
+@keyframes slidein {
+
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout {
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
 }
